@@ -4,11 +4,14 @@
   border-top: dotted 1px black;
   border-bottom: solid 2px black;
 }
+.size(@w,@h) {
+  width: @w;
+  height: @h;
+}
 
 .header {
   .bordered;
-  width: @width;
-  height: @height;
+  .size(@width,30rem);
   background-color: @third-color;
   color: @primary-color;
   &:hover {
