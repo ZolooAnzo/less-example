@@ -8,6 +8,7 @@ export default function App() {
       <p>hud hicheel number 1</p>
       <button className="button button-ok">OK</button>
       <button className="button button-cancel">CANCEL</button>
+      <div className="rectangle"></div>
     </header>
   );
 }

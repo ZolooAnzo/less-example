@@ -1,4 +1,5 @@
 @import 'style.less';
+//parent selector
 .button {
   &-ok {
     background-color: red;
@@ -7,32 +8,51 @@
     background-color: green;
   }
 }
+//mixin
 .bordered {
   border-top: dotted 1px black;
   border-bottom: solid 2px black;
 }
+//mixins with parameter
 .size(@w,@h) {
   width: @w;
   height: @h;
 }
+
+//namespaces and accessing
 #back {
   .background() {
     background-color: @third-color;
     color: @primary-color;
   }
 }
-
+//nested
 .header {
   .bordered;
   .size(@width,30rem);
+  //namespaces and accessing
   #back.background();
   &:hover {
+    //color change with function
     background-color: darken(@third-color, 50%);
   }
 }
-
+//maps
 @media (max-width: @size[mobile]) {
   .header {
     background-color: green;
   }
+}
+
+//extend
+.shape {
+  background-color: aqua;
+  border: 1px solid green;
+}
+
+.rectangle {
+  margin-top: 4rem;
+  width: 100px;
+  height: 50px;
+  &:extend(.shape);
 }
